@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+
+<header>
+    <div class="menu">
+        <a href="login.html">INICIO</a>
+        <a href="#">SOPORTE</a>
+        <a href="#">CONTACTO</a>
+    </div>
+    <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Cat_silhouette.svg/1024px-Cat_silhouette.svg.png" alt="icono" width="30">
+    </div>
+</header>
+
+<div class="container">
+    <div class="left">
+        <img src="img/image2.png" alt="Imagen decorativa">
+    </div>
+
+    <div class="right">
+        <h2>Crear cuenta</h2>
+        <form id="registroForm">
+            <select id="tipoUsuario" required>
+                <option value="">Selecciona tipo de usuario</option>
+                <option value="cliente">Cliente</option>
+                <option value="tecnico">Técnico</option>
+            </select>
+
+            <input type="text" id="nombre" placeholder="Nombre completo" required>
+            <input type="email" id="correo" placeholder="Correo electrónico" required>
+            <input type="password" id="clave" placeholder="Contraseña" required>
+
+            <!-- Campos dinámicos -->
+            <div id="extraCampos"></div>
+
+            <button type="submit">Registrarme</button>
+            <p id="mensaje-error"></p>
+        </form>
+    </div>
+</div>
+
+<script src="registro.js"></script>
+</body>
+</html>
