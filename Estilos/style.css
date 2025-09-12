@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
@@ -6,7 +6,7 @@ body{
     display: flex;
 }
 
-.sidebar{
+.sidebar {
     width: 220px;
     background-color: #2f2f2f;
     padding: 20px;
@@ -16,13 +16,13 @@ body{
     min-height: 100vh;
 }
 
-.sidebar h2{
+.sidebar h2 {
     font-size: 22px;
     margin-bottom: 30px;
     text-align: center;
 }
 
-.sidebar button{
+.sidebar button {
     display: block;
     width: 100%;
     padding: 12px;
@@ -31,71 +31,72 @@ body{
     border: none;
     color: white;
     text-align: left;
-    font-size: pointer;
+    font-size: 16px;
+    cursor: pointer;
     border-radius: 6px;
     transition: background 0.3s;
 }
 
 .sidebar button:hover,
-.sidebar button:active{
+.sidebar button:active {
     background-color: #444;
 }
 
-.sidebar img{
-    width: 50px;
+.sidebar img {
+    width: 60px;
     margin-top: 30px;
     align-self: center;
 }
 
 .main {
-  flex: 1;
-  padding: 40px;
-  background-color: #111;
+    flex: 1;
+    padding: 40px;
+    background-color: #111;
 }
 
 .profile-card {
-  background: #1c1c1c;
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
+    background: #1c1c1c;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: gray;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: url("../img/usuario.png") no-repeat center center / cover;
 }
 
 .user-info h3 {
-  margin: 0;
-  font-size: 20px;
-  color: #fff;
+    margin: 0;
+    font-size: 20px;
+    color: #fff;
 }
 
 .info-box {
-  background: #2f2f2f;
-  padding: 10px;
-  border-radius: 8px;
-  margin-top: 10px;
+    background: #2f2f2f;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
 .info-box p {
-  margin: 5px 0;
-  font-size: 14px;
+    margin: 5px 0;
+    font-size: 14px;
 }
 
 .tickets {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #4caf50;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4caf50;
 }
 
 .footer {
-  margin-top: 30px;
-  font-size: 14px;
-  color: #aaa;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
 }

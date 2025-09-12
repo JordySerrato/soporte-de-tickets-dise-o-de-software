@@ -3,12 +3,12 @@ function mostrarSeccion(seccion) {
 
   if (seccion === "tickets") {
     contenido.innerHTML = `
-      <h2>📄 Mis Tickets</h2>
+      <h2> Mis Tickets</h2>
       <p>Aquí aparecerán tus tickets registrados.</p>
     `;
   } else if (seccion === "crear") {
     contenido.innerHTML = `
-      <h2>➕ Crear Ticket</h2>
+      <h2> Crear Ticket</h2>
       <p>Formulario básico para crear un nuevo ticket.</p>
     `;
   } else if (seccion === "perfil") {
@@ -37,5 +37,6 @@ function mostrarSeccion(seccion) {
 }
 
 function cerrarSesion() {
-  alert("Sesión cerrada.");
+  alert("Sesión cerrada. Serás redirigido al login.");
+  location.href = "Crear-cuenta.html"; 
 }
