@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soporte Tech+</title>
+  <link rel="stylesheet" href="Estilos/Mistickets.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2 class="logo">Soporte Tech+</h2>
+      <nav>
+        <ul>
+          <li><button onclick="window.location.href='Mis_tickets.html'"> Mis Tickets</button></li>
+          <li><button onclick="window.location.href='Crear_tickets.html'"> Crear Ticket</button></li>
+          <li><button onclick="window.location.href='Perfil.html'"> Perfil</button></li>
+          <li><button onclick="window.location.href='Crear-cuenta.html'"> Cerrar Sesión</button></li>
+        </ul>
+      </nav>
+      <div class="mascota"></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="ordenar">
+          <label for="ordenar">Ordenar por: </label>
+          <select id="ordenar">
+            <option value="">----------</option>
+            <option value="id">ID</option>
+            <option value="asunto">Asunto</option>
+            <option value="estado">Estado</option>
+            <option value="fecha">Fecha</option>
+            <option value="tecnico">Técnico</option>
+          </select>
+        </div>
+        <div class="acciones">
+          <button>⚙</button>
+          <button>🌙</button>
+          <button>❓</button>
+        </div>
+      </header>
+
+      <table id="tablaTickets">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Asunto</th>
+            <th>Estado</th>
+            <th>Fecha</th>
+            <th>Técnico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1234</td>
+            <td>Error de conexión</td>
+            <td>Abierto</td>
+            <td>04/09/2025</td>
+            <td>Juanito Alcachofa</td>
+          </tr>
+          <tr>
+            <td>5678</td>
+            <td>Problemas con la impresora</td>
+            <td>En Proceso</td>
+            <td>01/06/2025</td>
+            <td>Esteban Ramirez</td>
+          </tr>
+          <tr>
+            <td>1352</td>
+            <td>Falla en el software</td>
+            <td>Cerrado</td>
+            <td>18/03/2025</td>
+            <td>Merari Aridai</td>
+          </tr>
+          <tr>
+            <td>5236</td>
+            <td>Red lenta</td>
+            <td>Abierto</td>
+            <td>30/11/2025</td>
+            <td>Kim Jennie</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <script src="Java/Mistickets.js"></script>
+</body>
+</html>

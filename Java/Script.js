@@ -1,42 +1,21 @@
 function mostrarSeccion(seccion) {
-  const contenido = document.getElementById("contenido");
-
-  if (seccion === "tickets") {
-    contenido.innerHTML = `
-      <h2> Mis Tickets</h2>
-      <p>Aquí aparecerán tus tickets registrados.</p>
-    `;
-  } else if (seccion === "crear") {
-    contenido.innerHTML = `
-      <h2> Crear Ticket</h2>
-      <p>Formulario básico para crear un nuevo ticket.</p>
-    `;
-  } else if (seccion === "perfil") {
-    contenido.innerHTML = `
-      <div class="profile-card">
-        <div class="avatar"></div>
-        <div class="user-info">
-          <h3>Merari Abidai Ramírez</h3>
-          <div class="info-box">
-            <p><b>Correo:</b> ari.perez@gmail.com</p>
-            <p><b>Teléfono:</b> +51 987 654 321</p>
-            <p><b>Área:</b> Ventas</p>
-            <p><b>Contraseña:</b> *******</p>
-          </div>
-          <div class="tickets">Cantidad de tickets enviados: 8</div>
-          <div class="footer">Fecha de registro: 12/04/2024</div>
-        </div>
-      </div>
-    `;
-  }
-
-  // Marcar botón activo
+  // ✅ Marcar botón activo
   const botones = document.querySelectorAll(".sidebar button");
   botones.forEach(btn => btn.classList.remove("active"));
-  event.target.classList.add("active");
+
+  // ✅ Redirecciones según el botón
+  if (seccion === "tickets") {
+    window.location.href = "Mis_tickets.html";
+  } else if (seccion === "crear") {
+    window.location.href = "Crear_ticket.html";
+  } else if (seccion === "perfil") {
+    window.location.href = "Perfil.html";
+  } else if (seccion === "novedades") {
+    window.location.href = "Novedades.html";
+  }
 }
 
 function cerrarSesion() {
   alert("Sesión cerrada. Serás redirigido al login.");
-  location.href = "Crear-cuenta.html"; 
+  window.location.href = "Crear-cuenta.html"; 
 }
