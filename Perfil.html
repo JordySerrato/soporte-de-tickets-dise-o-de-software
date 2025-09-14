@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoporteTech+</title>
-    <style>
-        body{
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: black;
-            color: #fff;
-            display: flex;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoporteTech+</title>
+  <link rel="stylesheet" href="Estilos/style.css">
 </head>
 <body>
-    <div class="sidebar">
+  <!-- Barra lateral -->
+  <div class="sidebar">
     <h2>SoporteTech+</h2>
-    <button onclick="mostrarSeccion('tickets')" class="active">Mis Ticket</button>
-    <button onclick="mostrarSeccion('crear')" class="active">crear Ticket</button>
-    <button onclick="mostrarSeccion('perfil')" class="active">perfil</button>
+    <button onclick="mostrarSeccion('tickets')">Mis Tickets</button>
+    <button onclick="mostrarSeccion('crear')">Crear Ticket</button>
+    <button onclick="mostrarSeccion('perfil')">Perfil</button>
+    <button onclick="mostrarSeccion('novedades')">Novedades</button>
     <button onclick="cerrarSesion()">Cerrar Sesión</button>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="main">
+    <div id="contenido">
+      <div class="profile-card">
+        <div class="avatar">
+          <!-- ✅ Aquí va la foto dentro del círculo -->
+          <img src="img/portada.png" alt="Foto de usuario">
+        </div>
+        <div class="user-info">
+          <h3>Merari Abidai Ramírez</h3>
+          <div class="info-box">
+            <p><b>Correo:</b> ari.perez@gmail.com</p>
+            <p><b>Teléfono:</b> +51 987 654 321</p>
+            <p><b>Área:</b> Ventas</p>
+            <p><b>Contraseña:</b> *******</p>
+          </div>
+          <div class="tickets">Cantidad de tickets enviados: 8</div>
+          <div class="footer">Fecha de registro: 12/04/2024</div>
+        </div>
+      </div>
     </div>
-    <img src="C:\Users\USUARIO\Documents\GitHub\soporte-de-tickets-dise-o-de-software\image.png" alt="icono">
+  </div>
+
+  <script src="Java/Script.js"></script>
 </body>
 </html>
