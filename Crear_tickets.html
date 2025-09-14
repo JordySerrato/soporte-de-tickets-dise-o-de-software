@@ -1,27 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenidos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #2e8b57;
-        }
-        p {
-            font-size: 1.2em;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoporteTech+ - Crear Ticket</title>
+  <link rel="stylesheet" href="Estilos/Creartickets.css">
 </head>
 <body>
-    <h1>¡Bienvenidos a nuestra página!</h1>
-    <p>Estamos muy contentos de tenerte aquí. Explora y disfruta de nuestro contenido.</p>
+  <div class="contenedor">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">Soporte<span>Tech+</span></h2>
+      <nav class="menu">
+        <a href="Mis_tickets.html" class="item"><span></span> Gestión de Tickets</a>
+        <a href="crear-cuenta.html" class="item activo"><span></span> Crear Ticket</a>
+        <a href="Novedades.html" class="item"><span></span> Novedades</a>
+        <a href="Perfil.html" class="item"><span></span> Perfil</a>
+        <a href="login.html" class="item"><span></span> cerrar Sesion</a>
+      </nav>
+      <div class="footer-icon">
+      </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+      <h1> Crear Ticket</h1>
+
+      <form class="form-ticket" onsubmit="crearTicket(event)">
+        <div class="form-grupo">
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" name="titulo" required placeholder="Ej: Error en la red">
+        </div>
+
+        <div class="form-grupo">
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" name="descripcion" rows="4" required placeholder="Describe el problema..."></textarea>
+        </div>
+
+        <div class="form-grupo">
+          <label for="prioridad">Prioridad:</label>
+          <select id="prioridad" name="prioridad" required>
+            <option value="Baja">Baja</option>
+            <option value="Media">Media</option>
+            <option value="Alta">Alta</option>
+          </select>
+        </div>
+
+        <div class="form-grupo">
+          <label for="categoria">Categoría:</label>
+          <select id="categoria" name="categoria" required>
+            <option value="Red">Red</option>
+            <option value="Correo">Correo</option>
+            <option value="Software">Software</option>
+            <option value="Hardware">Hardware</option>
+          </select>
+        </div>
+
+        <div class="acciones-form">
+          <button type="submit" class="btn-crear">✅ Crear</button>
+          <button type="reset" class="btn-reset">♻ Limpiar</button>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    function crearTicket(event) {
+      event.preventDefault();
+      const titulo = document.getElementById("titulo").value;
+      const descripcion = document.getElementById("descripcion").value;
+      const prioridad = document.getElementById("prioridad").value;
+      const categoria = document.getElementById("categoria").value;
+
+      alert(`✅ Ticket creado:\nTítulo: ${titulo}\nDescripción: ${descripcion}\nPrioridad: ${prioridad}\nCategoría: ${categoria}`);
+      
+      // Aquí se podría enviar al servidor con fetch/AJAX
+      document.querySelector(".form-ticket").reset();
+    }
+  </script>
 </body>
 </html>

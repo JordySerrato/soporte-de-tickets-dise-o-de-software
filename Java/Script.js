@@ -17,5 +17,5 @@ function mostrarSeccion(seccion) {
 
 function cerrarSesion() {
   alert("Sesión cerrada. Serás redirigido al login.");
-  window.location.href = "Crear-cuenta.html"; 
+  window.location.href = "login.html"; 
 }
