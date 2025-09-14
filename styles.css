@@ -2,260 +2,181 @@
    ESTILOS GENERALES
 ============================= */
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff;
-    overflow-x: hidden;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  overflow-x: hidden;
 }
 
 /* =============================
    BARRA SUPERIOR
 ============================= */
 header {
-    background: linear-gradient(90deg, #bdbdbd, #9e9e9e);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 25px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    animation: fadeInDown 1s ease-out;
+  background: linear-gradient(90deg, #bdbdbd, #9e9e9e);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: fadeInDown 1s ease-out;
 }
 
 .menu {
-    display: flex;
-    gap: 25px;
+  display: flex;
+  gap: 25px;
 }
 
 .menu a {
-    position: relative;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  transition: color 0.3s;
 }
 
 /* Subrayado animado */
 .menu a::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: black;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0%; height: 2px;
+  background: black;
+  transition: width 0.3s;
 }
 
-.menu a:hover {
-    color: #333;
-}
+.menu a:hover { color: #333; }
+.menu a:hover::after { width: 100%; }
 
-.menu a:hover::after {
-    width: 100%;
-}
-
-/* Ícono en la esquina */
-header img {
-    transition: transform 0.3s ease;
-}
-
-header img:hover {
-    transform: rotate(15deg) scale(1.1);
-}
+/* Logo/Icono */
+header img { transition: transform 0.3s; }
+header img:hover { transform: rotate(15deg) scale(1.1); }
 
 /* =============================
-   CONTENEDOR PRINCIPAL
+   LAYOUT PRINCIPAL
 ============================= */
-.container {
-    display: flex;
-    height: calc(100vh - 60px);
-}
+.container { display: flex; height: calc(100vh - 60px); }
 
-/* =============================
-   COLUMNA IZQUIERDA (IMAGEN)
-============================= */
+/* COLUMNA IZQUIERDA (IMAGEN) */
 .left {
-    flex: 2;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    animation: slideInLeft 1.2s ease-out;
-    position: relative;
+  flex: 2;
+  background: #000;
+  display: flex; justify-content: center; align-items: center;
+  overflow: hidden;
+  animation: slideInLeft 1.2s ease-out;
+  position: relative;
 }
 
 .left img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.9);
-    transition: filter 0.3s, transform 0.3s;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+  transition: filter 0.3s, transform 0.3s;
 }
-
-.left img:hover {
-    filter: brightness(1.1);
-    transform: scale(1.05);
-}
+.left img:hover { filter: brightness(1.1); transform: scale(1.05); }
 
 /* Brillo decorativo */
 .left::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255,255,255,0.3) 0%, transparent 80%);
-    transform: skewX(-25deg);
-    animation: shine 3s infinite;
+  content: "";
+  position: absolute;
+  top: 0; left: -50%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.3) 0%, transparent 80%);
+  transform: skewX(-25deg);
+  animation: shine 3s infinite;
 }
 
-/* =============================
-   COLUMNA DERECHA (LOGIN / REGISTRO)
-============================= */
+/* COLUMNA DERECHA (LOGIN/REGISTRO) */
 .right {
-    flex: 1;
-    background-color: #e0e0e0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-    border-radius: 10px 0 0 10px;
-    animation: slideInRight 1.2s ease-out;
-    box-shadow: -4px 0 10px rgba(0,0,0,0.05);
+  flex: 1;
+  background: #e0e0e0;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  padding: 25px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.05);
+  animation: slideInRight 1.2s ease-out;
 }
 
 .avatar {
-    background: linear-gradient(135deg, #ccc, #999);
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    margin-bottom: 20px;
-    animation: fadeIn 1.5s ease-in;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  display: flex; justify-content: center; align-items: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ccc, #999);
+  animation: fadeIn 1.5s ease-in;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* =============================
-   CAMPOS DE FORMULARIO
+   FORMULARIOS
 ============================= */
 input, select {
-    display: block;
-    width: 220px;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 20px;
-    border: none;
-    font-weight: bold;
-    text-align: center;
-    transition: box-shadow 0.3s, transform 0.2s;
+  width: 240px;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s;
 }
 
 input:focus, select:focus {
-    box-shadow: 0 0 12px rgba(0,0,0,0.3);
-    outline: none;
-    transform: scale(1.03);
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  outline: none;
+  transform: scale(1.03);
 }
 
-select {
-    background-color: #fff;
-    width: 240px;
-}
-
-/* =============================
-   BOTONES
-============================= */
+/* Botones */
 button {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  background: black; color: white;
+  padding: 10px 20px;
+  border: none; border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+button:hover { background: #444; transform: scale(1.05); }
 
-button:hover {
-    background-color: #444;
-    transform: scale(1.05);
-}
-
-/* =============================
-   ENLACES DE TEXTO
-============================= */
+/* Links de texto */
 .forgot, .crear-cuenta {
-    font-size: 12px;
-    margin-top: 10px;
-    text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center;
 }
-
 .forgot a, .crear-cuenta a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: color 0.3s;
+  color: black; font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
 }
-
-.forgot a:hover, .crear-cuenta a:hover {
-    color: #555;
-}
+.forgot a:hover, .crear-cuenta a:hover { color: #555; }
 
 /* =============================
-   MENSAJE DE ERROR
+   MENSAJES
 ============================= */
 #mensaje-error {
-    display: none;
-    color: red;
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 14px;
-    text-align: center;
+  display: none;
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
 }
 
 /* =============================
    ANIMACIONES
 ============================= */
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInRight {
-    from { opacity: 0; transform: translateX(50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes shine {
-    0% { left: -50%; }
-    100% { left: 150%; }
-}
-
+@keyframes slideInLeft { from {opacity:0; transform:translateX(-50px);} to {opacity:1; transform:translateX(0);} }
+@keyframes slideInRight { from {opacity:0; transform:translateX(50px);} to {opacity:1; transform:translateX(0);} }
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes fadeInDown { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+@keyframes shine { 0%{left:-50%;} 100%{left:150%;} }
 @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+  0%,100%{transform:translateX(0);}
+  25%{transform:translateX(-5px);}
+  50%{transform:translateX(5px);}
+  75%{transform:translateX(-5px);}
 }
-
-.shake {
-    animation: shake 0.3s ease;
-}
+.shake { animation: shake 0.3s ease; }
