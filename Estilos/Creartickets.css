@@ -1,0 +1,159 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: #fff;
+  display: flex;
+}
+
+.contenedor {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #2f2f2f;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.sidebar .logo {
+  font-size: 22px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: white;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.sidebar .logo span {
+  color: #4caf50;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.sidebar nav .item {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  text-decoration: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  text-align: left;
+  background-color: #2f2f2f;
+  transition: background 0.3s;
+}
+
+.sidebar nav .item:hover,
+.sidebar nav .item.activo {
+  background-color: #4caf50;
+}
+
+.footer-icon img {
+  margin-top: 30px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+/* Contenido */
+.contenido {
+  flex: 1;
+  padding: 40px;
+  background-color: #111;
+}
+
+.contenido h1 {
+  margin-bottom: 25px;
+  color: #4caf50;
+}
+
+/* Formulario */
+.form-ticket {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-grupo {
+  margin-bottom: 20px;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.form-grupo input,
+.form-grupo textarea,
+.form-grupo select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #4caf50;
+  border-radius: 6px;
+  background-color: #1c1c1c;
+  color: #fff;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Botones del formulario */
+.acciones-form {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-crear {
+  background-color: #28a745;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-crear:hover {
+  background-color: #218838;
+}
+
+.btn-reset {
+  background-color: #dc3545;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-reset:hover {
+  background-color: #c82333;
+}

@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenidos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #eef1ef;
-        }
-        p {
-            font-size: 1.2em;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novedades - SoporteTech+</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Estilos/novedades.css">
 </head>
 <body>
-    <h1>¡Bienvenidos a nuestra página!</h1>
-    <p>Estamos muy contentos de tenerte aquí. Explora y disfruta de nuestro contenido.</p>
+  <div class="sidebar">
+    <h2>SoporteTech+</h2>
+    <button class="active"><i class="fa fa-bell"></i> Novedades</button>
+    <button onclick="location.href='Mis_tickets.html'"><i class="fa fa-ticket"></i> Mis Tickets</button>
+    <button onclick="location.href='Crear_tickets.html'"><i class="fa fa-plus-circle"></i> Crear Ticket</button>
+    <button onclick="location.href='Perfil.html'"><i class="fa fa-user"></i> Perfil</button>
+    <button onclick="cerrarSesion()"><i class="fa fa-sign-out-alt"></i> Cerrar Sesión</button>
+    <img src="img/portada.png" alt="icono">
+  </div>
+
+  <div class="main">
+    <h1>¡Bienvenido a SoporteTech+!</h1>
+    <div class="news-container">
+      <div class="news-card">
+        <h3>📢 Nuevo canal de soporte</h3>
+        <p>Ahora puedes comunicarte vía WhatsApp con el área técnica para consultas rápidas.</p>
+        <small>Publicado: 12/09/2025</small>
+      </div>
+      <div class="news-card">
+        <h3>🛠️ Mantenimiento programado</h3>
+        <p>El sistema estará en mantenimiento el 20/09/2025 desde las 00:00 hasta las 04:00.</p>
+        <small>Publicado: 11/09/2025</small>
+      </div>
+      <div class="news-card">
+        <h3>⭐ Tip de la semana</h3>
+        <p>Recuerda cambiar tu contraseña cada 90 días para mejorar la seguridad.</p>
+        <small>Publicado: 10/09/2025</small>
+      </div>
+    </div>
+  </div>
+
+  <script src="Java/Script.js"></script>
 </body>
 </html>

@@ -24,10 +24,10 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
 }
 
+/* 🔹 Título siempre arriba */
 .sidebar h2 {
   font-size: 22px;
   margin-bottom: 30px;
@@ -41,38 +41,42 @@ body {
   color: #4caf50;
 }
 
-/* 🔹 Botones Sidebar con espaciado igual a Perfil */
+/* 🔹 Contenedor de botones centrado */
+.sidebar nav {
+  flex: 1; /* ocupa el espacio disponible entre título y mascota */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sidebar nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.sidebar nav ul li {
-  margin-bottom: 15px; /* mismo espaciado que Perfil */
-}
-
-.sidebar nav ul li:last-child {
-  margin-bottom: 0; /* evita espacio extra abajo */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
 .sidebar nav ul li button {
-  width: 100%;
-  padding: 12px 15px;
-  background-color: #2f2f2f; /* color base */
+  width: 160px;
+  padding: 12px;
+  background-color: #2f2f2f;
   border: none;
   border-radius: 8px;
   color: white;
   font-size: 16px;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .sidebar nav ul li button:hover {
-  background-color: #444; /* hover igual que perfil */
+  background-color: #444;
 }
 
+/* Mascota al final */
 .mascota {
   font-size: 2rem;
   text-align: center;
@@ -134,7 +138,7 @@ body {
   overflow: hidden;
 }
 
-#tablaTickets th, 
+#tablaTickets th,
 #tablaTickets td {
   padding: 12px 15px;
   border-bottom: 1px solid #2f2f2f;
@@ -149,4 +153,40 @@ body {
 
 #tablaTickets tr:hover {
   background: #222;
+}
+
+/* 🔹 Botones de acciones en la tabla */
+table td button {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+/* Botón Editar */
+button.editar {
+  background-color: #28a745; /* Verde */
+}
+button.editar:hover {
+  background-color: #218838;
+}
+
+/* Botón Guardar */
+button.guardar {
+  background-color: #007bff; /* Azul */
+}
+button.guardar:hover {
+  background-color: #0069d9;
+}
+
+/* Botón Eliminar */
+button.eliminar {
+  background-color: #dc3545; /* Rojo */
+}
+button.eliminar:hover {
+  background-color: #c82333;
 }

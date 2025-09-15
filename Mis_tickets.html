@@ -15,10 +15,10 @@
           <li><button onclick="window.location.href='Mis_tickets.html'"> Mis Tickets</button></li>
           <li><button onclick="window.location.href='Crear_tickets.html'"> Crear Ticket</button></li>
           <li><button onclick="window.location.href='Perfil.html'"> Perfil</button></li>
+          <li><button onclick="window.location.href='Novedades.html'"> Novedades</button></li>
           <li><button onclick="window.location.href='login.html'"> Cerrar Sesión</button></li>
         </ul>
       </nav>
-      <div class="mascota"></div>
     </aside>
 
     <main class="main">
@@ -49,6 +49,7 @@
             <th>Estado</th>
             <th>Fecha</th>
             <th>Técnico</th>
+            <th>Acciones</th> <!-- ✅ nueva columna -->
           </tr>
         </thead>
         <tbody>
@@ -58,6 +59,10 @@
             <td>Abierto</td>
             <td>04/09/2025</td>
             <td>Juanito Alcachofa</td>
+            <td>
+              <button class="editar">✏ Editar</button>
+              <button class="eliminar">🗑 Eliminar</button>
+            </td>
           </tr>
           <tr>
             <td>5678</td>
@@ -65,6 +70,10 @@
             <td>En Proceso</td>
             <td>01/06/2025</td>
             <td>Esteban Ramirez</td>
+            <td>
+              <button class="editar">✏ Editar</button>
+              <button class="eliminar">🗑 Eliminar</button>
+            </td>
           </tr>
           <tr>
             <td>1352</td>
@@ -72,6 +81,10 @@
             <td>Cerrado</td>
             <td>18/03/2025</td>
             <td>Merari Aridai</td>
+            <td>
+              <button class="editar">✏ Editar</button>
+              <button class="eliminar">🗑 Eliminar</button>
+            </td>
           </tr>
           <tr>
             <td>5236</td>
@@ -79,6 +92,10 @@
             <td>Abierto</td>
             <td>30/11/2025</td>
             <td>Kim Jennie</td>
+            <td>
+              <button class="editar">✏ Editar</button>
+              <button class="eliminar">🗑 Eliminar</button>
+            </td>
           </tr>
         </tbody>
       </table>
