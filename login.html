@@ -45,15 +45,12 @@
 
             const cuentas = {
                 cliente: "1234",
-                administrador: "admin123",
                 tecnico: "tec456"
             };
 
             if (cuentas[usuario] && cuentas[usuario] === password) {
                 if (usuario === "cliente") {
                     window.location.href = "Mis_tickets.html";
-                } else if (usuario === "administrador") {
-                    window.location.href = "admin.html";
                 } else if (usuario === "tecnico") {
                     window.location.href = "tecnico.html";
                 }
