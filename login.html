@@ -1,68 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página estilo imagen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página estilo imagen</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="menu">
-            <a href="#">NOVEDADES</a>
-        </div>
-        <div>
-            <img src="img/cat.png" alt="icono" width="30">
-        </div>
-    </header>
-    <div class="container">
-        <div class="left">
-            <img src="img/image2.png" alt="Imagen decorativa">
-        </div>
-        <div class="right">
-            <div class="avatar">👤</div>
-            <input type="text" id="usuario" placeholder="USUARIO">
-            <input type="password" id="password" placeholder="CONTRASEÑA">
-            <button onclick="login()">▶</button>
-            <div class="forgot">
-                ¿Olvidaste tu contraseña? <a href="#">Da click aquí</a>
-            </div>
-            <div class="crear-cuenta">
-                ¿No tienes cuenta? <a href="crear-cuenta.html">Crear cuenta</a>
-            </div>
-            <p id="mensaje-error"></p>
-        </div>
+  <header>
+    <div class="menu">
+      <a href="#">NOVEDADES</a>
+    </div>
+    <div>
+      <img src="img/cat.png" alt="icono" width="30">
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="left">
+      <img src="img/image2.png" alt="Imagen decorativa">
     </div>
 
-    <script>
-        function login() {
-            const usuario = document.getElementById("usuario").value.trim().toLowerCase();
-            const password = document.getElementById("password").value.trim();
-            const mensajeError = document.getElementById("mensaje-error");
+    <div class="right">
+      <div class="avatar">👤</div>
+      <input type="email" id="usuario" placeholder="Correo electrónico">
+      <input type="password" id="password" placeholder="Contraseña">
+      <button id="loginBtn">▶</button>
 
-            const cuentas = {
-                cliente: "1234",
-                tecnico: "tec456"
-            };
+      <div class="forgot">
+        ¿Olvidaste tu contraseña? <a href="#">Da click aquí</a>
+      </div>
+      <div class="crear-cuenta">
+        ¿No tienes cuenta? <a href="crear-cuenta.html">Crear cuenta</a>
+      </div>
+      <p id="mensaje-error"></p>
+    </div>
+  </div>
 
-            if (cuentas[usuario] && cuentas[usuario] === password) {
-                if (usuario === "cliente") {
-                    window.location.href = "Mis_tickets.html";
-                } else if (usuario === "tecnico") {
-                    window.location.href = "tecnico.html";
-                }
-            } else {
-                mensajeError.textContent = "⚠ Usuario o contraseña incorrectos. Intenta de nuevo.";
-                mensajeError.style.display = "block";
-                mensajeError.classList.remove("shake");
-                void mensajeError.offsetWidth;
-                mensajeError.classList.add("shake");
-            }
-        }
-    </script>
-
+  <script src="registro.js"></script>
 </body>
 </html>

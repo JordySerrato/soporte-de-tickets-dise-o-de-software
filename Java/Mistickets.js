@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Acción: Editar fila
+  // Acción: Editar / Guardar fila
   tabla.addEventListener("click", (e) => {
     if (e.target.classList.contains("editar")) {
       const fila = e.target.closest("tr");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.target.textContent = "💾 Guardar";
       e.target.classList.remove("editar");
       e.target.classList.add("guardar");
-    }
+    } 
     else if (e.target.classList.contains("guardar")) {
       const fila = e.target.closest("tr");
       const celdas = fila.querySelectorAll("td");

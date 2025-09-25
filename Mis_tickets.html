@@ -8,19 +8,21 @@
 </head>
 <body>
   <div class="container">
+    <!-- Sidebar -->
     <aside class="sidebar">
       <h2 class="logo">Soporte Tech+</h2>
       <nav>
         <ul>
-          <li><button onclick="window.location.href='Mis_tickets.html'"> Mis Tickets</button></li>
-          <li><button onclick="window.location.href='Crear_tickets.html'"> Crear Ticket</button></li>
-          <li><button onclick="window.location.href='Perfil.html'"> Perfil</button></li>
-          <li><button onclick="window.location.href='Novedades.html'"> Novedades</button></li>
-          <li><button onclick="window.location.href='login.html'"> Cerrar Sesión</button></li>
+          <li><button onclick="window.location.href='Mis_tickets.html'">Mis Tickets</button></li>
+          <li><button onclick="window.location.href='Crear_tickets.html'">Crear Ticket</button></li>
+          <li><button onclick="window.location.href='Perfil.html'">Perfil</button></li>
+          <li><button onclick="window.location.href='Novedades.html'">Novedades</button></li>
+          <li><button onclick="window.location.href='login.html'">Cerrar Sesión</button></li>
         </ul>
       </nav>
     </aside>
 
+    <!-- Main -->
     <main class="main">
       <header class="topbar">
         <div class="ordenar">
@@ -31,7 +33,6 @@
             <option value="asunto">Asunto</option>
             <option value="estado">Estado</option>
             <option value="fecha">Fecha</option>
-            <option value="tecnico">Técnico</option>
           </select>
         </div>
         <div class="acciones">
@@ -41,6 +42,7 @@
         </div>
       </header>
 
+      <!-- Tabla -->
       <table id="tablaTickets">
         <thead>
           <tr>
