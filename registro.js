@@ -95,3 +95,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+function guardarCuenta() {
+  const nombre = document.getElementById('nombre').value;
+  const correo = document.getElementById('correo').value;
+  const telefono = document.getElementById('telefono').value;
+  const area = document.getElementById('area').value;
+  const contraseña = document.getElementById('contraseña').value;
+
+  // Guardar en localStorage
+  localStorage.setItem('nombre', nombre);
+  localStorage.setItem('correo', correo);
+  localStorage.setItem('telefono', telefono);
+  localStorage.setItem('area', area);
+  localStorage.setItem('contraseña', contraseña);
+
+  // Redirigir al perfil
+  window.location.href = 'perfil.html';
+}
+
+// registro.js
+
+document.getElementById('registroForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que el formulario se envíe y recargue la página
+
+    const tipoUsuario = document.getElementById('tipoUsuario').value;
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const clave = document.getElementById('clave').value;
+
+    // Guardar los datos en localStorage
+    localStorage.setItem('tipoUsuario', tipoUsuario);
+    localStorage.setItem('nombre', nombre);
+    localStorage.setItem('correo', correo);
+    localStorage.setItem('clave', clave);
+
+    // Redirigir al perfil
+    window.location.href = 'perfil.html';
+});
+
