@@ -13,48 +13,50 @@
       <h2 class="logo">Soporte<span>Tech+</span></h2>
       <nav class="menu">
         <a href="Mis_tickets.html" class="item"><span></span> Gestión de Tickets</a>
-        <a href="crear-cuenta.html" class="item activo"><span></span> Crear Ticket</a>
+        <a href="crear-cuenta.html" class="item"><span></span> Crear Ticket</a>
         <a href="Novedades.html" class="item"><span></span> Novedades</a>
         <a href="Perfil.html" class="item"><span></span> Perfil</a>
-        <a href="login.html" class="item"><span></span> cerrar Sesion</a>
+        <a href="login.html" class="item"><span></span> Cerrar Sesión</a>
       </nav>
-      <div class="footer-icon">
-      </div>
     </aside>
 
     <!-- Contenido principal -->
     <main class="contenido">
-      <h1> Crear Ticket</h1>
+      <h1>Crear Ticket</h1>
 
-      <form class="form-ticket" onsubmit="crearTicket(event)">
-        <div class="form-grupo">
-          <label for="titulo">Título:</label>
-          <input type="text" id="titulo" name="titulo" required placeholder="Ej: Error en la red">
-        </div>
+      <form class="form-ticket" id="formTicket" autocomplete="off">
+        <fieldset>
+          <legend>Detalles del ticket</legend>
 
-        <div class="form-grupo">
-          <label for="descripcion">Descripción:</label>
-          <textarea id="descripcion" name="descripcion" rows="4" required placeholder="Describe el problema..."></textarea>
-        </div>
+          <div class="form-grupo">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required placeholder="Ej: Error en la red">
+          </div>
 
-        <div class="form-grupo">
-          <label for="prioridad">Prioridad:</label>
-          <select id="prioridad" name="prioridad" required>
-            <option value="Baja">Baja</option>
-            <option value="Media">Media</option>
-            <option value="Alta">Alta</option>
-          </select>
-        </div>
+          <div class="form-grupo">
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required placeholder="Describe el problema..."></textarea>
+          </div>
 
-        <div class="form-grupo">
-          <label for="categoria">Categoría:</label>
-          <select id="categoria" name="categoria" required>
-            <option value="Red">Red</option>
-            <option value="Correo">Correo</option>
-            <option value="Software">Software</option>
-            <option value="Hardware">Hardware</option>
-          </select>
-        </div>
+          <div class="form-grupo">
+            <label for="prioridad">Prioridad:</label>
+            <select id="prioridad" name="prioridad" required>
+              <option value="Baja">Baja</option>
+              <option value="Media">Media</option>
+              <option value="Alta">Alta</option>
+            </select>
+          </div>
+
+          <div class="form-grupo">
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria" required>
+              <option value="Red">Red</option>
+              <option value="Correo">Correo</option>
+              <option value="Software">Software</option>
+              <option value="Hardware">Hardware</option>
+            </select>
+          </div>
+        </fieldset>
 
         <div class="acciones-form">
           <button type="submit" class="btn-crear">✅ Crear</button>
@@ -64,19 +66,7 @@
     </main>
   </div>
 
-  <script>
-    function crearTicket(event) {
-      event.preventDefault();
-      const titulo = document.getElementById("titulo").value;
-      const descripcion = document.getElementById("descripcion").value;
-      const prioridad = document.getElementById("prioridad").value;
-      const categoria = document.getElementById("categoria").value;
-
-      alert(`✅ Ticket creado:\nTítulo: ${titulo}\nDescripción: ${descripcion}\nPrioridad: ${prioridad}\nCategoría: ${categoria}`);
-      
-      // Aquí se podría enviar al servidor con fetch/AJAX
-      document.querySelector(".form-ticket").reset();
-    }
-  </script>
+  <!-- Script externo -->
+  <script src="Java/creartickets.js"></script>
 </body>
 </html>

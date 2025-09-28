@@ -1,47 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const tabla = document.getElementById("tablaTickets");
+  const tabla = document.querySelector("#tablaTickets tbody");
 
-  // Acción: Eliminar fila
+  function cargar() {
+    const tickets = JSON.parse(localStorage.getItem("tickets")) || [];
+    tabla.innerHTML = "";
+
+    tickets.forEach((t, i) => {
+      tabla.innerHTML += `
+        <tr>
+          <td>${t.id}</td>
+          <td>${t.asunto}</td>
+          <td>${t.estado}</td>
+          <td>${t.fecha}</td>
+          <td>${t.tecnico}</td>
+          <td>
+            <button class="editar" data-i="${i}">✏ Editar</button>
+            <button class="eliminar" data-i="${i}">🗑 Eliminar</button>
+          </td>
+        </tr>`;
+    });
+  }
+
+  // Acciones de la tabla
   tabla.addEventListener("click", (e) => {
+    let tickets = JSON.parse(localStorage.getItem("tickets")) || [];
+    const i = e.target.dataset.i;
+
+    // 🗑 Eliminar
     if (e.target.classList.contains("eliminar")) {
-      const fila = e.target.closest("tr");
-      if (confirm("¿Seguro que deseas eliminar este ticket?")) {
-        fila.remove();
-      }
+      tickets.splice(i, 1);
+      localStorage.setItem("tickets", JSON.stringify(tickets));
+      cargar();
     }
-  });
 
-  // Acción: Editar / Guardar fila
-  tabla.addEventListener("click", (e) => {
+    // ✏ Editar / 💾 Guardar
     if (e.target.classList.contains("editar")) {
-      const fila = e.target.closest("tr");
-      const celdas = fila.querySelectorAll("td");
-
-      // Omitimos la última celda de "Acciones"
-      for (let i = 0; i < celdas.length - 1; i++) {
-        const valor = celdas[i].innerText;
-        celdas[i].innerHTML = `<input type="text" value="${valor}" />`;
+      const fila = e.target.closest("tr").children;
+      for (let j = 0; j < fila.length - 1; j++) {
+        fila[j].innerHTML = `<input value="${fila[j].innerText}">`;
       }
-
       e.target.textContent = "💾 Guardar";
-      e.target.classList.remove("editar");
-      e.target.classList.add("guardar");
-    } 
-    else if (e.target.classList.contains("guardar")) {
-      const fila = e.target.closest("tr");
-      const celdas = fila.querySelectorAll("td");
-
-      // Guardar cambios
-      for (let i = 0; i < celdas.length - 1; i++) {
-        const input = celdas[i].querySelector("input");
-        if (input) {
-          celdas[i].innerText = input.value;
-        }
-      }
-
-      e.target.textContent = "✏ Editar";
-      e.target.classList.remove("guardar");
-      e.target.classList.add("editar");
+      e.target.classList.replace("editar", "guardar");
+    } else if (e.target.classList.contains("guardar")) {
+      const fila = e.target.closest("tr").children;
+      tickets[i] = {
+        id: fila[0].querySelector("input").value,
+        asunto: fila[1].querySelector("input").value,
+        estado: fila[2].querySelector("input").value,
+        fecha: fila[3].querySelector("input").value,
+        tecnico: fila[4].querySelector("input").value,
+      };
+      localStorage.setItem("tickets", JSON.stringify(tickets));
+      cargar();
     }
   });
+
+  cargar();
 });
